@@ -6,6 +6,16 @@ Iteratively loops as if panning for gold. Pass after pass, stopping only once tw
 
 ## Install
 
+### Claude (Desktop/Web)
+
+Customize → Plugins → Add marketplace → Add from a repository → `unfamiliar-city/marketplace` → Sync → Install `glean`
+
+### ChatGPT
+
+No repo-based install exists. Skills → Create → Create with chat → paste the contents of [`skills/glean/SKILL.md`](skills/glean/SKILL.md) → Install
+
+### Claude Code / Codex CLI
+
 Via the [unfamiliar-city marketplace](https://github.com/unfamiliar-city/marketplace):
 
 ```
