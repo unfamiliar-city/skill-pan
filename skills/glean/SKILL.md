@@ -12,4 +12,7 @@ Read the whole chat log – pull the raw transcript from disk if your tool provi
 
 Task: extract signal from noise
 
-Loop: each pass, find signal not yet found. One pass per invocation — after presenting a pass, ask the user if they want you to look again, and stop looping there. Stop if two passes in a row find nothing new
+Loop: each pass, find signal not yet found. Stop once two passes in a row find nothing new.
+
+- Claude Code / Codex CLI: loop autonomously within this invocation, no need to check in with the user between passes. Each pass, spawn a fresh subagent with the transcript plus the findings-so-far; it returns only what's new. Append that to a scratch findings file yourself, then start the next pass. Present the accumulated findings once the loop stops.
+- Claude (Desktop/Web) / ChatGPT: one pass per invocation. Present the pass, then ask the user if they want another; stop there either way.
