@@ -1,5 +1,5 @@
 {
-  "name": "glean",
-  "version": "1.0.1",
-  "description": "A lightweight micro-skill that iteratively extracts signal from noise in session logs and transcripts."
+  "name": "pan",
+  "version": "2.0.0",
+  "description": "A lightweight micro-skill that pans session logs and transcripts for signal, revising its distillation pass after pass."
 }

@@ -1,18 +1,18 @@
-# glean
+# pan
 
-A lightweight micro-skill to iteratively extract signal from noise in chat logs.
+A lightweight micro-skill to pan chat logs and transcripts for signal.
 
-Iteratively loops as if panning for gold. Pass after pass, stopping only once two passes in a row come up empty.
+Pass after pass, it adds what was missed and corrects what was wrong, until two passes in a row change nothing — washing away the noise until only the gold is left.
 
 ## Install
 
 ### Claude (Desktop/Web)
 
-Customize → Plugins → Add marketplace → Add from a repository → `unfamiliar-city/marketplace` → Sync → Install `glean`
+Customize → Plugins → Add marketplace → Add from a repository → `unfamiliar-city/marketplace` → Sync → Install `pan`
 
 ### ChatGPT
 
-No repo-based install exists. Skills → Create → Create with chat → paste the contents of [`skills/glean/SKILL.md`](skills/glean/SKILL.md) → Install
+No repo-based install exists. Skills → Create → Create with chat → paste the contents of [`skills/pan/SKILL.md`](skills/pan/SKILL.md) → Install
 
 ### Claude Code / Codex CLI
 
@@ -21,16 +21,17 @@ Via the [unfamiliar-city marketplace](https://github.com/unfamiliar-city/marketp
 ```
 /plugin marketplace add unfamiliar-city/marketplace
 /reload-plugins
-/plugin install glean
+/plugin install pan
 ```
 
 ## Use
 
 ```
-> /glean
+> /pan                 # pans this session's chat log
+> /pan transcript.md   # pans a file
 ```
 
-Manual only — runs when you invoke `/glean`. 
+Manual only — runs when you invoke `/pan`. 
 
 ## Supported tools
 
