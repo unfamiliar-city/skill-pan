@@ -1,6 +1,6 @@
 ---
 name: glean
-description: 'Extract signal from noise from a log, looping until two passes in a row find nothing new. Manual only — invoke only if user explicitly runs /glean'
+description: 'Extract signal from noise from a log, revising the distillation pass after pass until two passes in a row change nothing material. Manual only — invoke only if user explicitly runs /glean'
 disable-model-invocation: true
 ---
 
@@ -11,9 +11,9 @@ Source: the file given as argument; otherwise the raw chat log
 
 Claude Code / Codex CLI: loop autonomously. Each pass, spawn a fresh subagent with exactly this prompt — add nothing:
 
-- First pass: `Extract signal from noise in <source path>.`
-- Later passes: `Extract signal from noise in <source path>. Already captured: <findings path>. Capture only signal not already there.`
+- First pass: `Extract signal from noise in <source path>. Write it to <findings path>.`
+- Later passes: `Extract signal from noise in <source path>. Revise <findings path>: add what's missing, correct what's wrong.`
 
-Append each reply to a scratch findings file verbatim. Stop once two passes in a row add nothing. Present the findings file.
+The findings file lives in scratch. Never edit it yourself. Before each later pass, snapshot it (`findings.1.md`, `findings.2.md`, …). Stop once two passes in a row make no material change — new or corrected signal, not rewording — judged from the diff. Present the final findings file.
 
-Claude (Desktop/Web) / ChatGPT: one pass per invocation, same instruction applied yourself. Present it, then ask if the user wants another.
+Claude (Desktop/Web) / ChatGPT: one pass per invocation, same instructions applied yourself to the distillation in context. Present it, then ask if the user wants another.
