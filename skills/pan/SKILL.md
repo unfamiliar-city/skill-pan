@@ -1,6 +1,6 @@
 ---
-name: glean
-description: 'Extract signal from noise from a log, revising the distillation pass after pass until two passes in a row change nothing material. Manual only — invoke only if user explicitly runs /glean'
+name: pan
+description: 'Extract signal from noise from a log, revising the distillation pass after pass until two passes in a row change nothing material. Manual only — invoke only if user explicitly runs /pan'
 disable-model-invocation: true
 ---
 
