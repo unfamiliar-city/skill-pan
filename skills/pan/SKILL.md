@@ -11,9 +11,9 @@ Source: the file given as argument; otherwise the raw chat log
 
 Claude Code / Codex CLI: loop autonomously. Each pass, spawn a fresh subagent with exactly this prompt — add nothing:
 
-- First pass: `Extract signal from noise in <source path>. Write it to <findings path>.`
-- Later passes: `Extract signal from noise in <source path>. Revise <findings path>: add what's missing, correct what's wrong.`
+- First pass: `Extract signal from noise in <source path>. Write it to <scratch>/notes.md.`
+- Later passes: `Extract signal from noise in <source path>. Revise <scratch>/notes.md: add what's missing, correct what's wrong.`
 
-The findings file lives in scratch. Never edit it yourself. Before each later pass, snapshot it (`findings.1.md`, `findings.2.md`, …). Stop once two passes in a row make no material change — new or corrected signal, not rewording — judged from the diff. Present the final findings file.
+`<scratch>` is your scratch directory, as an absolute path. Never edit `notes.md` yourself. Before each later pass, snapshot it (`notes.1.md`, `notes.2.md`, …). Stop once two passes in a row make no material change — new or corrected signal, not rewording — judged from the diff. Present the final `notes.md`.
 
 Claude (Desktop/Web) / ChatGPT: one pass per invocation, same instructions applied yourself to the distillation in context. Present it, then ask if the user wants another.

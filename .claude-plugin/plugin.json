@@ -1,5 +1,5 @@
 {
   "name": "pan",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "A lightweight micro-skill that pans session logs and transcripts for signal, revising its distillation pass after pass."
 }
